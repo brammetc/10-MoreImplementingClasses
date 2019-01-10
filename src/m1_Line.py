@@ -407,7 +407,7 @@ class Line(object):
           :rtype: float
         """
         # ---------------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -415,6 +415,11 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        denom = (self.end.x - self.start.x)
+        if denom == 0:
+            return math.inf
+        slope = ((self.end.y - self.start.y) / denom)
+        return slope
 
     def length(self):
         """
@@ -440,7 +445,7 @@ class Line(object):
           :rtype: float
         """
         # ---------------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -448,6 +453,10 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        a = (self.end.x - self.start.x)
+        b = self.end.y - self.start.y
+        c = math.sqrt(a ** 2 + b ** 2)
+        return c
 
     def get_number_of_clones(self):
         """
